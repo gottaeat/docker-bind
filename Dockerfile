@@ -9,6 +9,7 @@ RUN \
         /var/bind/*
 
 COPY ./static/bind/ /etc/bind/
+COPY ./static/docker /static
 
 RUN \
     rndc-confgen -a -c /etc/bind/rndc.key && \
@@ -22,4 +23,4 @@ WORKDIR /etc/bind
 EXPOSE 53/tcp
 EXPOSE 53/udp
 
-ENTRYPOINT ["named", "-u", "named", "-g"]
+CMD ["/static/entrypoint.sh"]
