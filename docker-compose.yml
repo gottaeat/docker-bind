@@ -1,11 +1,11 @@
 ---
 services:
-  bind9:
+  named:
     #build:
     #  context: .
-    image: ghcr.io/gottaeat/docker-recursive-bind:latest
-    container_name: bind9
+    image: ghcr.io/gottaeat/docker-bind:latest
+    container_name: named
     restart: unless-stopped
     network_mode: host
-    #volumes:
-    #  - ./data:/data
+    volumes:
+      - ./data:/data
