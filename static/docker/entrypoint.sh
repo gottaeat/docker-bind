@@ -2,7 +2,7 @@
 . /static/common
 
 # - - sanity checks - - #
-if mountpint /data >/dev/null 2>&1; then
+if mountpoint /data >/dev/null 2>&1; then
     if [ ! -f "/data/extra.conf" ]; then
         perr "/data is bind mounted but extra.conf does not exist, exiting."
     fi
