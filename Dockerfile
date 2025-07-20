@@ -1,4 +1,4 @@
-FROM alpine:3.21.3 AS bind
+FROM alpine:3.22.1 AS bind
 
 RUN \
     apk update && apk upgrade && \
