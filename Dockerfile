@@ -1,8 +1,8 @@
-FROM alpine:3.22.1 AS bind
+FROM alpine:3.21.4 AS bind
 
 RUN \
     apk update && apk upgrade && \
-    apk --no-cache add iproute2 tcpdump bind bind-plugins && \
+    apk --no-cache add bind bind-plugins && \
     rm -rfv \
         /etc/bind/* \
         /usr/lib/bind/filter-a.so \
