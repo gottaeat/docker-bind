@@ -1,7 +1,10 @@
 FROM alpine:3.23.0 AS bind
 
+# apk-tools has a bug that breaks on emulated armv7
 RUN \
-    apk update && apk upgrade && \
+    apk update && \
+    apk upgrade --scripts=no apk-tools && \
+    apk upgrade && \
     apk --no-cache add bind bind-plugins && \
     rm -rfv \
         /etc/bind/* \
