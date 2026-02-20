@@ -1,4 +1,4 @@
-FROM alpine:3.23.0 AS bind
+FROM alpine:3.23.3 AS bind
 
 # apk-tools has a bug that breaks on emulated armv7
 RUN \
